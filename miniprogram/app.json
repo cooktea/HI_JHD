@@ -1,19 +1,37 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/user/user",
+    "pages/service/service",
+    "pages/setting/setting",
+    "pages/lessonSchedule/lessonSchedule"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "Hi~江海大",
     "navigationBarTextStyle": "black"
   },
+  "tabBar":{
+      "color":"#000",
+      "selectdColor":"#000",
+      "backgroundColor":"#fff",
+      "position":"bottom",
+      "list":[
+        {
+          "pagePath":"pages/index/index",
+          "text":"主页"
+        },
+        {
+         "pagePath":"pages/service/service",
+         "text":"校内服务" 
+        },
+        {
+          "pagePath":"pages/user/user",
+          "text":"我的"
+        }
+      ]
+    },
   "sitemapLocation": "sitemap.json"
 }
