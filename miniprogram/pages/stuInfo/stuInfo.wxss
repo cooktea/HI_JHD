@@ -1,0 +1,23 @@
+
+.stu_info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20rpx;
+}
+
+.form_text{
+    width: 200rpx;
+    text-align: center;
+}
+
+.form_input{
+
+}

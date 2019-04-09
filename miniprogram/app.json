@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
+    "pages/stuInfo/stuInfo",
     "pages/service/service",
     "pages/setting/setting",
     "pages/lessonSchedule/lessonSchedule"
