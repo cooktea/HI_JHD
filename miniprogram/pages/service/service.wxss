@@ -1,1 +1,27 @@
 /* pages/service/service.wxss */
+.container{
+    display: flex;
+}
+.service{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 600rpx;
+}
+.service_item{
+    background-color: rgb(253, 241, 200);
+    height: 200rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10rpx;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-style: outset;
+    border-color: rgb(253, 241, 200);
+}
+.item_text{
+
+}

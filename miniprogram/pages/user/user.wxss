@@ -6,8 +6,8 @@
 }
 
 .user_avatar{
-    width: 128rpx;
-    height: 128rpx;
+    width: 168rpx;
+    height: 168rpx;
     margin: 20rpx;
     border-radius: 50%;
 }
@@ -25,7 +25,12 @@
 
 .item{
     margin-left: 10%;
+    margin-right: 10%;
     margin-top: 30rpx;
+    width: 600rpx;
+    border-bottom-style: ridge;
+    border-width: 4rpx;
+    border-color: rgb(36, 33, 29);
 }
 
 .item_text{

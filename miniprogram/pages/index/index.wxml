@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="toptab">
+        <view class="{{Tabindex==chooseTab ? 'active':'tab'}}" wx:for="{{Toptab}}" wx:for-item="Tabname" wx:for-index="Tabindex" data-idx="{{Tabindex}}" bindtap="chooseTab">
+            {{Tabname}}
+        </view>
+    </view>
+    <view class="body" wx:if="{{chooseTab == '0'}}">1</view>
+    <view class="body" wx:if="{{chooseTab == '1'}}">2</view>
+    
+</view>

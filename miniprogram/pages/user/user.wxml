@@ -1,21 +1,21 @@
 <view class="Container">
     <view class="userinfo">
-        <image class="user_avatar" src="{{userInfo.avatarUrl}}" />
-        <text class="user_nick">{{userInfo.nickName}}</text>
+        <open-data type="userAvatarUrl" class="user_avatar" />
+        <open-data type="userNickName" class="user_nick" />
     </view>
     
     <view class="item_list">
         <view class="item" bindtap="setStuInfo">
-            <text class="item_text">个人信息</text>
+            <text class="item_text">#个人信息</text>
         </view>
         <view class="item">
-            <text class="item_text">我的课表</text>
+            <text class="item_text">#我的课表</text>
         </view>
         <view class="item">
-            <text class="item_text">考试信息</text>
+            <text class="item_text">#考试信息</text>
         </view>
         <view class="item">
-            <text class="item_text">设置</text>
+            <text class="item_text">#设置</text>
         </view> 
     </view>
 

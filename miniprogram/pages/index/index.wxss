@@ -1,0 +1,29 @@
+.toptab{
+    width: 750rpx;
+    height: 100rpx;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.active{
+    width: 50%;
+    color: brown;
+  }
+
+.tab{
+    width: 50%;
+    color: black;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    height: 2000rpx;
+    width: 100%;
+    background-color: aliceblue;
+}

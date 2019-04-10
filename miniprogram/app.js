@@ -1,7 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-    
+    var that = this;
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -10,7 +10,18 @@ App({
         traceUser: true,
       })
     }
+
+    wx.cloud.callFunction({
+        name:"login",
+        complete:res=>{
+            that.globalData.openid = res.result
+        }
+    })
+    setTimeout(()=>{
+      console.log(that.globalData.openid)
+    },2000)
   },
+
   getUserInfo:function(cb){
     var that = this
     if(this.globalData.userInfo){
@@ -29,7 +40,9 @@ App({
       })
     }
   },
+    
   globalData:{
     userInfo:null,
+    openid:""
   }
 })

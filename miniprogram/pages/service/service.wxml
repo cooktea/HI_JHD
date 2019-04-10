@@ -1,0 +1,7 @@
+<view class="container">
+    <view class="service">
+        <view class="service_item" wx:for="{{service}}" wx:for-item="service_name" wx:for-index="index" data-index="{{index}}" bindtap="chooseService">
+            <text class="item_text">{{service_name}}</text>
+        </view>
+    </view>
+</view>
