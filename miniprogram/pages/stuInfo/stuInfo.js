@@ -100,7 +100,7 @@ Page({
                 })
             }
             console.log(this.data)
-        },500)
+        },1000)
     },
     globalData:{
         openid:"",

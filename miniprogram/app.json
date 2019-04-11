@@ -4,6 +4,7 @@
     "pages/user/user",
     "pages/stuInfo/stuInfo",
     "pages/service/service",
+    "pages/service/Xiaoli/Xiaoli",
     "pages/setting/setting",
     "pages/lessonSchedule/lessonSchedule"
   ],

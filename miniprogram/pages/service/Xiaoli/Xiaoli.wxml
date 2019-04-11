@@ -1,0 +1,5 @@
+<view class="container">
+    <view class="image">
+        <image src="../../../images/xiaoli_2.jpg" mode="widthFix"/>
+    </view>
+</view>
