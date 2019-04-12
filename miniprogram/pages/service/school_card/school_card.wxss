@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+}
+
+.item_list{
+    display: flex;
+    flex-direction: column;
+}
+
+.item{
+    display: flex;
+}
+
+.find_card{
+    width: 750rpx;
+    height: 100rpx;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.find_card_item{
+    width: 50%;
+    color: black;
+}
+
+.info_camera{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.button{
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.info_item{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20rpx;
+    /* text-align: center; */
+}
+
+.info_text{
+    width: 150rpx;
+    text-align: center;
+}

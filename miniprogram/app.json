@@ -5,6 +5,7 @@
     "pages/stuInfo/stuInfo",
     "pages/service/service",
     "pages/service/Xiaoli/Xiaoli",
+    "pages/service/school_card/school_card",
     "pages/setting/setting",
     "pages/lessonSchedule/lessonSchedule"
   ],

@@ -6,7 +6,9 @@ Page({
     
     chooseService:function(e){
         if(e.currentTarget.dataset.index == "0"){
-
+            wx.navigateTo({
+                url:"school_card/school_card"
+            })
         }
         if(e.currentTarget.dataset.index == "1"){
             wx.navigateTo({
