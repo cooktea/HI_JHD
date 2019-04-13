@@ -48,7 +48,14 @@
     /* text-align: center; */
 }
 
+/* .info_item_button{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    background-color: blue
+} */
+
 .info_text{
-    width: 150rpx;
+    width: 200rpx;
     text-align: center;
 }

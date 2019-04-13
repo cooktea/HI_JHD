@@ -46,8 +46,30 @@
         
         <form wx:if="{{submitType == '1'}}">
             <view class="info_item">
-
+                <text class="info_text">学号:</text>
+                <input class="info_input" />
             </view>
+
+             <view class="info_item">
+                <text class="info_text">时间:</text>
+                <input class="info_input" />
+            </view>           
+ 
+             <view class="info_item">
+                <text class="info_text">地点:</text>
+                <input class="info_input" />
+            </view> 
+
+            <view class="info_item">
+                <text class="info_text">联系方式:</text>
+                <input class="info_input" />
+            </view>
+
+            <view class="info_item">
+                <button class="button" type="primary" form-type="submit">提交</button>
+                <button class="button" type="warn" form-type="reset">重置</button>
+            </view>
+
         </form>
     </view>
 
