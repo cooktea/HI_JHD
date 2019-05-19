@@ -48,14 +48,38 @@
     /* text-align: center; */
 }
 
-/* .info_item_button{
+.info_item_button{
     display: flex;
     flex-direction: column;
     align-self: center;
     background-color: blue
-} */
+}
 
 .info_text{
     width: 200rpx;
     text-align: center;
+}
+
+.get_card{
+    margin:10rpx;
+    width: 700rpx;
+    height: 700rpx;
+    display: flex;
+    flex-direction: column;
+    border-bottom-style: solid;  
+    border-bottom-color:black;
+    border-top-style: solid;  
+    border-top-color:black;
+}
+
+.lost_card{
+    margin:10rpx;
+    width: 700rpx;
+    height: 300rpx;
+    display: flex;
+    flex-direction: column;
+    border-bottom-style: solid;  
+    border-bottom-color:black;
+    border-top-style: solid;  
+    border-top-color:black;
 }

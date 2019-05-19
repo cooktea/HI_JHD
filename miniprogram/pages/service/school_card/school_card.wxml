@@ -8,13 +8,9 @@
             我卡丢了
         </view>
     </view>
-
-    <view wx:if="{{submitType == '0'}}">
-        <!-- <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera> -->
-    </view>    
     
     <view class="card_info" wx:if="{{currentView == '0'}}">
-        <form wx:if="{{submitType == '0'}}">
+        <form wx:if="{{submitType == '0'}}" bindsubmit="submitCard">
 
             <view class="info_camera">
                 <image src="{{imgurl}}" wx:if="{{imgurl}}"/>
@@ -23,46 +19,46 @@
 
             <view class="info_item">
                 <text class="info_text">学号:</text>
-                <input class="info_input" />
+                <input class="info_input" name="number" />
             </view>
 
              <view class="info_item">
                 <text class="info_text">时间:</text>
-                <input class="info_input" />
+                <input class="info_input" name="time"/>
             </view>           
  
              <view class="info_item">
                 <text class="info_text">地点:</text>
-                <input class="info_input" />
+                <input class="info_input" name="location"/>
             </view>       
 
             <view class="info_item">
                 <button wx:if="{{imgurl == ''}}" class="button" type="primary" bindtap="takephoto">拍照</button>
                 <button wx:if="{{imgurl}}" class="button" type="warn" bindtap="retakephoto">重拍</button>
-                <button class="button" type="primary" form-type="submit">提交</button>
+                <button class="button" type="primary" form-type="submit" >提交</button>
             </view>
 
         </form>
         
-        <form wx:if="{{submitType == '1'}}">
+        <form wx:if="{{submitType == '1'}}" bindsubmit="submitLostCard">
             <view class="info_item">
                 <text class="info_text">学号:</text>
-                <input class="info_input" />
+                <input class="info_input" name="number"/>
             </view>
 
              <view class="info_item">
                 <text class="info_text">时间:</text>
-                <input class="info_input" />
+                <input class="info_input" name="time"/>
             </view>           
  
              <view class="info_item">
                 <text class="info_text">地点:</text>
-                <input class="info_input" />
+                <input class="info_input" name="location"/>
             </view> 
 
             <view class="info_item">
                 <text class="info_text">联系方式:</text>
-                <input class="info_input" />
+                <input class="info_input" name="contact"/>
             </view>
 
             <view class="info_item">
@@ -73,9 +69,42 @@
         </form>
     </view>
 
-    <view class="item_list">
-        <view class="item" wx:for="{{card_info}}">
-
+    <view class="item_list" wx:if="{{currentView=='1'}}">
+        <view class="item" wx:for="{{cards}}" wx:for-index="idx" wx:for-item="itemName">
+            <view class="get_card" wx:if="{{itemName.type == '1'}}">
+                <view style="height:100rpx">
+                    <view style="text-align:center;margin-top:10rpx;margin-left:50rpx;font-size:150%;width:600rpx;background-color:gray">捡到卡了</view>
+                </view>
+                <view style="margin-left:50rpx;display:flex;align-content:center;justify-items:center">
+                    <image src="{{itemName.imgid}}" style="width:600rpx" mode="widthFix" />
+                </view>
+                <view style="margin-left:50rpx" wx:if="{{itemName.cardInfo.number}}">
+                    学号:{{itemName.cardInfo.number}}
+                </view>
+                <view style="margin-left:50rpx" wx:if="{{itemName.cardInfo.time}}">
+                    时间:{{itemName.cardInfo.time}}
+                </view>
+                <view style="margin-left:50rpx" wx:if="{{itemName.cardInfo.location}}">
+                    地点:{{itemName.cardInfo.location}}
+                </view>
+            </view>
+            <view class="lost_card" wx:if="{{itemName.type == '2'}}">
+                <view style="height:100rpx">
+                    <view style="text-align:center;margin-top:10rpx;margin-left:50rpx;font-size:150%;width:600rpx;background-color:gray">卡丢了</view>
+                </view>
+                <view style="margin-left:50rpx" wx:if="{{itemName.cardInfo.number}}">
+                    学号:{{itemName.cardInfo.number}}
+                </view>
+                <view style="margin-left:50rpx" wx:if="{{itemName.cardInfo.time}}">
+                    时间:{{itemName.cardInfo.time}}
+                </view>
+                <view style="margin-left:50rpx" wx:if="{{itemName.cardInfo.location}}">
+                    地点:{{itemName.cardInfo.location}}
+                </view>
+                <view style="margin-left:50rpx" wx:if="{{itemName.cardInfo.contact}}">
+                    联系方式:{{itemName.cardInfo.contact}}
+                </view>
+            </view>
         </view>
     </view>
 </view>

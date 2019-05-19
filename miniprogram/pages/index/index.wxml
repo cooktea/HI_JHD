@@ -4,7 +4,9 @@
             {{Tabname}}
         </view>
     </view>
-    <view class="body" wx:if="{{chooseTab == '0'}}">1</view>
+    <view class="body" wx:if="{{chooseTab == '0'}}">
+        <button bindtap="test">test</button>
+    </view>
     <view class="body" wx:if="{{chooseTab == '1'}}">2</view>
     
 </view>
