@@ -18,6 +18,14 @@ Page({
     },
 
     onLoad:function(){
-
+        var that = this;
+        wx.getSystemInfo({
+            success(res){
+                console.log(res)
+                that.setData({
+                    height:res.windowHeight+"px"
+                })
+            }
+        })
     }
 })

@@ -8,15 +8,9 @@
         <view class="item" bindtap="setStuInfo">
             <text class="item_text">#个人信息</text>
         </view>
-        <view class="item">
-            <text class="item_text">#我的课表</text>
-        </view>
-        <view class="item">
+        <view class="item" bindtap="getExaminfo">
             <text class="item_text">#考试信息</text>
         </view>
-        <view class="item">
-            <text class="item_text">#设置</text>
-        </view> 
     </view>
 
 </view>

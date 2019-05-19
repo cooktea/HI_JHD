@@ -72,11 +72,13 @@ Page({
 
   test:function(){
     wx.request({
-      url:'http://127.0.0.1:5000/index',
-      method:"post",
+      url:"http://127.0.0.1:5000/getExamInfo",
+      data:{
+        stu_number:"2018150299"
+      },
       success(res){
-        console.log(res.data)
+          console.log(res.data)
       }
-    })
+  })
   }
 })

@@ -14,18 +14,30 @@
 .find_card{
     width: 750rpx;
     height: 100rpx;
-    background-color: antiquewhite;
+    background-color: #a0d8ef;
     display: flex;
     flex-direction: row;
     text-align: center;
     align-items: center;
+    justify-content: center;
     margin-left: 5%;
     margin-right: 5%;
 }
 
 .find_card_item{
-    width: 50%;
-    color: black;
+    width: 40%;
+    height: 80%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    background-color: #00a3af;
+    border: #59b6c9;
+    border-style: groove;
+    font-size: 120%;
+    border-radius: 20rpx;
+    margin: auto;
 }
 
 .info_camera{
@@ -63,13 +75,14 @@
 .get_card{
     margin:10rpx;
     width: 700rpx;
-    height: 700rpx;
+    height: 800rpx;
     display: flex;
     flex-direction: column;
+    background-color: #c1e4e9;
     border-bottom-style: solid;  
-    border-bottom-color:black;
+    border-bottom-color:#0095d9;
     border-top-style: solid;  
-    border-top-color:black;
+    border-top-color:#0095d9;
 }
 
 .lost_card{
@@ -78,8 +91,9 @@
     height: 300rpx;
     display: flex;
     flex-direction: column;
+    background-color: #c8d5bb;
     border-bottom-style: solid;  
-    border-bottom-color:black;
+    border-bottom-color:#0095d9;
     border-top-style: solid;  
-    border-top-color:black;
+    border-top-color:#0095d9;
 }

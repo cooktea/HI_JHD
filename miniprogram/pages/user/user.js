@@ -11,6 +11,12 @@ Page({
         })
     },
 
+    getExaminfo:function(){
+        wx.navigateTo({
+            url:"../examInfo/examInfo"
+        })
+    },
+
     onLoad:function(){
         console.log("user onload");
     }

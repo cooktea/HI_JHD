@@ -6,15 +6,14 @@
     "pages/service/service",
     "pages/service/Xiaoli/Xiaoli",
     "pages/service/school_card/school_card",
-    "pages/setting/setting",
-    "pages/lessonSchedule/lessonSchedule"
+    "pages/examInfo/examInfo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#19448e",
     "navigationBarTitleText": "Hi~江海大",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar":{
       "color":"#888",

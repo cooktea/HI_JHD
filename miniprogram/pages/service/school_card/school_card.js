@@ -10,14 +10,14 @@ Page({
         submitType:"",//"0":捡卡提交，"1":"丢卡提交"
         imgurl:"",
     },
-
+    
     onLoad:function(){
         this.camera = wx.createCameraContext()
         const db = wx.cloud.database()
         const _ = db.command
         console.log(this.data.cards)
         db.collection("school_card").limit(20).where({
-            timestamp : _.gt((Number)(new Date()).valueOf()-1000*60*60*24*7)
+            timestamp : _.gt((Number)(new Date()).valueOf()-1000*60*60*24*30)
         })
         .get().then(res=>{
             console.log(res.data.length)
@@ -76,63 +76,91 @@ Page({
             card_info:{
                 number:e.detail.value.number,
                 time:e.detail.value.time,
-                location:e.detail.value.location
+                location:e.detail.value.location,
+                link:e.detail.value.link
             }
         })
         if(this.data.imgurl){
-            wx.showLoading({
-                title: '上传中',
-                })
-                
-            wx.cloud.uploadFile({
-                cloudPath:"schoolCard/"+this.data.card_info.number+(new Date()).valueOf()+".jpg",
-                filePath:this.data.imgurl,
-                success:res => {
-                    const db = wx.cloud.database()
-                    const info = db.collection("school_card")
-                    info.add({
-                        data:{
-                            cardInfo:this.data.card_info,
-                            imgid:res.fileID,
-                            timestamp:(new Date()).valueOf(),
-                            type:1//1:捡卡，2:丢卡
-                        },
-                        success:res=>{
-                            wx.hideLoading()
-                            wx.showToast({
-                                title:"上传成功",
-                                icon:"success",
-                                duration:2000
-                            })
-                            if(this.data.card_info.number){
-                                //TODO:上传成功后调用后台发送邮件
+            if(this.data.card_info.number && this.data.card_info.link){
+                wx.showLoading({
+                    title: '上传中',
+                    })
+                wx.cloud.uploadFile({
+                    cloudPath:"schoolCard/"+this.data.card_info.number+(new Date()).valueOf()+".jpg",
+                    filePath:this.data.imgurl,
+                    success:res => {
+                        const db = wx.cloud.database()
+                        const info = db.collection("school_card")
+                        info.add({
+                            data:{
+                                cardInfo:this.data.card_info,
+                                imgid:res.fileID,
+                                timestamp:(new Date()).valueOf(),
+                                type:1//1:捡卡，2:丢卡
+                            },
+                            success:res=>{
+                                wx.hideLoading()
+                                wx.showToast({
+                                    title:"上传成功",
+                                    icon:"success",
+                                    duration:2000
+                                })
+                                console.log(this.data.card_info)
+                                db.collection("stu_info").where({
+                                    stu_number:this.data.card_info.number
+                                }).get().then(res => {
+                                    wx.request({
+                                        url:"http://127.0.0.1:5000/sendmail",
+                                        data:{
+                                            location:res.data[0].post_address,
+                                            stu_number:this.data.card_info.number,
+                                            phone_number:this.data.card_info.link
+                                        },
+                                        success(res){
+                                            if(res.statusCode == 200){
+                                                wx.showToast({
+                                                    title:"通知邮件发送成功",
+                                                    icon:"success",
+                                                    duration:2000
+                                                })
+                                            }
+                                        }
+                                    })
+                                })
+                            },
+                            fail:err=>{
+                                wx.cloud.deleteFile({
+                                    fileList:[res.fileID]
+                                })
+                                wx.showToast({
+                                    title:"上传失败",
+                                    icon:"none",
+                                    duration:2000
+                                })
                             }
-
-                        },
-                        fail:err=>{
-                            wx.cloud.deleteFile({
-                                fileList:[res.fileID]
-                            })
-                            wx.showToast({
-                                title:"上传失败",
-                                icon:"none",
-                                duration:2000
-                            })
-                        }
+                        })
+                    },
+                    fail:err=>{
+                        wx.showToast({
+                            title:"上传失败",
+                            icon:"none",
+                            duration:2000
+                        })
+                    }
+                })
+            }
+            else{
+                wx.showToast({
+                    title: '请完善校园卡信息，谢谢',
+                    icon: 'none',
+                    duration: 2000
                     })
-                },
-                fail:err=>{
-                    wx.showToast({
-                        title:"上传失败",
-                        icon:"none",
-                        duration:2000
-                    })
-                }
-            })
+            }
+            
         }
         else{
             wx.showToast({
-                title: '请给拾获的校园卡拍照',
+                title: '请给拾获的校园卡拍照，谢谢',
                 icon: 'none',
                 duration: 2000
                 })
