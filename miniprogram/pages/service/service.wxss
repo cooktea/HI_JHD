@@ -1,7 +1,7 @@
 /* pages/service/service.wxss */
 .container{
     display: flex;
-    background-color: #80aba9
+    background-color: aliceblue;
 }
 .service{
     display: flex;
