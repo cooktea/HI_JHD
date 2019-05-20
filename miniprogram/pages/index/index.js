@@ -1,3 +1,5 @@
+const app = getApp()
+
 Page({
 
   /**
@@ -18,7 +20,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("ok")
+    const db = wx.cloud.database()
+    db.collection("stu_info").where({
+      _openid:app.globalData.openid
+    }).get().then(res=>{
+      console.log(res.data[0])
+      if(!res.data[0].stu_number){
+        wx.showModal({
+          title:"完善信息",
+          content:"请点击确定完善信息",
+          showCancel:false,
+          success(res){
+            wx.navigateTo({
+              url:"../stuInfo/stuInfo"
+            })
+          }
+        })
+      }
+    })
   },
 
   /**
