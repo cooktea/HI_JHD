@@ -1,0 +1,61 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.pageTitle{
+    height: 100rpx;
+    font-size: 200%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00a3af;
+    color: white;
+    border-style: hidden;
+    border-radius: 20rpx;
+}
+
+.examInfomationItem{
+    width: 600rpx;
+    height: 300rpx;
+    border-style: solid;
+    border-color: gray;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    display: flex;
+    flex-direction: row;
+    border-radius: 40rpx;
+}
+
+.itemNumber{
+    width: 120rpx;
+    height: 120rpx;
+    font-size: 180%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50rpx;
+    margin-left: 30rpx;
+    border-style: hidden;
+    border-radius: 75rpx;
+    background-color: #80989b;
+}
+
+.itemInfo{
+    width: 400rpx;
+    height: 240rpx;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15rpx;
+    margin-left: 20rpx;
+    margin-right: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.lessonName{
+    height: 80rpx;
+    font-size: 150%;
+    border-bottom-style: groove;
+    border-color: #393f4c;
+}

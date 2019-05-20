@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="pageTitle">
+        挂科比不挂柯南
+    </view>
+    <view wx:if="{{examInfo.length == 0}}">
+        最近可能没有考试哦
+    </view>
+    <view wx:for="{{examInfo}}">
+        <view class="examInfomationItem">
+            <view class="itemNumber">
+                {{item[0]}}
+            </view>
+            <view class="itemInfo">
+                <view class="lessonName" >
+                    {{item[1]}}
+                </view>
+                <view >
+                    {{item[2]}}
+                </view>
+                <view>
+                    {{item[3]}}
+                </view>
+                <view>
+                    {{item[5]}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
