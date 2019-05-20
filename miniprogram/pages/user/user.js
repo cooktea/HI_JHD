@@ -13,7 +13,7 @@ Page({
 
     getExaminfo:function(){
         wx.navigateTo({
-            url:"../examInfo/examInfo"
+            url:"../examinfo/examinfo"
         })
     },
 
