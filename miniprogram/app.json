@@ -6,7 +6,7 @@
     "pages/service/service",
     "pages/service/Xiaoli/Xiaoli",
     "pages/service/school_card/school_card",
-    "pages/examInfo/examInfo"
+    "pages/examinfo/examinfo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -34,6 +34,5 @@
           "text":"我的"
         }
       ]
-    },
-  "sitemapLocation": "sitemap.json"
+    }
 }
