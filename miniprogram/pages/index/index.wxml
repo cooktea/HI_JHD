@@ -5,8 +5,25 @@
         </view>
     </view>
     <view class="body" wx:if="{{chooseTab == '0'}}">
-        <button bindtap="test">test</button>
+        <view wx:for="{{news}}">
+            <view class="Item">
+                <view class="img">
+                    <image wx:if="{{item.imgpath}}" style="width:600px" mode="widthFix" src="{{item.imgpath}}" ></image>
+                    <view wx:else>
+                        未找到缩略图
+                    </view>
+                </view>
+                <view class="newInfo">
+                    <view class="title">
+                        {{item.title}}
+                    </view>
+                    <view class="time">
+                        {{item.time}}
+                    </view>
+                </view>
+            </view>
+
+        </view>
     </view>
     <view class="body" wx:if="{{chooseTab == '1'}}">2</view>
-    
 </view>

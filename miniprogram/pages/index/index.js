@@ -1,13 +1,13 @@
 const app = getApp()
 
 Page({
-
   /**
    * 页面的初始数据
    */
     data: {
       Toptab: ["校内新闻","竞赛信息"],
       chooseTab:"0",
+      news:[]
     },
 
     chooseTab:function(e){
@@ -20,6 +20,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getNewslist()
+    this.setData({
+      news:this.data.news
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     const db = wx.cloud.database()
     db.collection("stu_info").where({
       _openid:app.globalData.openid
@@ -38,20 +55,6 @@ Page({
         })
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
   },
 
   /**
@@ -89,15 +92,63 @@ Page({
     
   },
 
+  onReachBottom: function (){
+    this.getNewslist()
+  },
+
   test:function(){
+    this.getNewslist()
+  },
+
+  updateImagePath:function(){
+    for(var i=0;i<this.data.news.length;i++){
+      this.getImage(i)
+    }
+  },
+
+  getImage:function(index){
+    var that = this
+      if(!(this.data.news[index].imgpath == 'noImg')){
+        return
+      }
+      else{
+        var theNew = this.data.news[index]
+        wx.downloadFile({
+          url:"http://127.0.0.1:5000/getImage/"+this.data.news[index].img,
+          success(res){
+            theNew.imgpath = res.tempFilePath
+            // console.log(theNew)
+            that.setData({
+              news:that.data.news
+            })
+          }
+        })
+      }
+    // this.setData({
+    //   news:this.data.news
+    // })
+  }, 
+
+  getNewslist :function(){
+    var that = this
     wx.request({
-      url:"http://127.0.0.1:5000/getExamInfo",
+      url:"http://127.0.0.1:5000/getNewslist",
       data:{
-        stu_number:"2018150299"
+        start:this.data.news.length
       },
       success(res){
-          console.log(res.data)
+        var getnews = res.data
+        for(var i=0;i<getnews.length;i++){
+          that.data.news[that.data.news.length] = getnews[i]
+          that.setData({
+            news:that.data.news
+          })
+        }
       }
-  })
+    })
+    setTimeout(function(){
+      that.updateImagePath()
+    },1000)
   }
 })
+
