@@ -6,7 +6,8 @@
     "pages/service/service",
     "pages/service/Xiaoli/Xiaoli",
     "pages/service/school_card/school_card",
-    "pages/examinfo/examinfo"
+    "pages/examinfo/examinfo",
+    "pages/new/new"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -15,24 +16,24 @@
     "navigationBarTitleText": "Hi~江海大",
     "navigationBarTextStyle": "white"
   },
-  "tabBar":{
-      "color":"#888",
-      "selectedColor":"#111",
-      "backgroundColor":"#fff",
-      "position":"bottom",
-      "list":[
-        {
-          "pagePath":"pages/index/index",
-          "text":"主页"
-        },
-        {
-         "pagePath":"pages/service/service",
-         "text":"校内服务" 
-        },
-        {
-          "pagePath":"pages/user/user",
-          "text":"我的"
-        }
-      ]
-    }
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#111",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "校内服务"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  }
 }
