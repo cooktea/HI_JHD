@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js">
+<link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css">
+
+</head><body class="markdown-body" style="margin-left: 10%;margin-right:10%;margin-bottom: 100px">
+<h1 id="hijhd-e5b08fe7a88be5ba8fe8afb4e6988ee4b88ee6bc94e7a4ba-2" data-line="0" class="code-line">HI_JHD 小程序说明与演示</h1>
+<h2 id="e4b8bae4bb80e4b988e58699e8bf99e4b8aae5b08fe7a88be5ba8f-2" data-line="1" class="code-line">为什么写这个小程序</h2>
+<p data-line="2" class="code-line">四月中旬的时候收到学校通知有这么一个小程序设计竞赛，小程序是我从来没有接触过的东西，而且小程序的技术找中使用的前端技术我也没有系统的学过。所以就打算借着这个机会学习一下包括小程序开发、HTML、CSS、JS的相关内容。<br>
+适逢我校在冲刺江苏海洋大学的改名事项，所以就想借着这个机会开发一款可以方便同窗使用的校内服务性小程序。</p>
+<h2 id="e5b08fe7a88be5ba8fe58fafe4bba5e5b9b2e4bb80e4b988-2" data-line="4" class="code-line">小程序可以干什么</h2>
+<p data-line="5" class="code-line">由于本人技术上不够成熟，时间有限，且还有学习任务在身。所以没有按照预想中完成全部的功能。如有机会，后续会完成本项目的开发。<br>
+通过使用基于python的爬虫技术，可以在小程序内查看学校的旭日新闻网主页上的“学校要闻”栏目。可以查询自己的考试信息。<br>
+同时，小程序还提供一些方便同学的服务。例如校园卡招领和校历查询等。值得一提的是，校园卡招领功能中当有人拾获了校园卡并录入正确的信息后，如果校园卡的主人也使用过小程序且在小程序中登记了自己的信息，则后台将会自动发送一封邮件给该卡的主人。</p>
+<h2 id="e5b08fe7a88be5ba8fe4bdbfe794a8e79a84e68a80e69cafe6a088-2" data-line="8" class="code-line">小程序使用的技术栈</h2>
+<h3 id="e5b08fe7a88be5ba8fe5bf85e9a1bbe4bdbfe794a8e79a84e5898de7abafe68a80e69caf-2" data-line="9" class="code-line">小程序必须使用的前端技术</h3>
+<ul>
+<li data-line="10" class="code-line">JavaScript</li>
+<li data-line="11" class="code-line">HTML</li>
+<li data-line="12" class="code-line">CSS</li>
+</ul>
+<h3 id="e5908ee7abafe68a80e69caf-2" data-line="13" class="code-line">后端技术</h3>
+<ul>
+<li data-line="14" class="code-line">python</li>
+<li data-line="15" class="code-line">flask</li>
+<li data-line="16" class="code-line">mysql</li>
+<li data-line="17" class="code-line">docker</li>
+</ul>
+<h2 id="e9a1b9e79baee6bc94e7a4ba-2" data-line="18" class="code-line">项目演示(gif图时间较长)</h2>
+<ol>
+<li data-line="19" class="code-line">首次使用小程序，进入主页后跳转至信息采集页。若数据库中没有该用户的微信openid，则跳转至信息采集页。</li>
+</ol>
+<h2 id="8" data-line="21" class="code-line"><img src="image/userInfo.gif" alt="" class="loading" id="image-hash-68df11bd2b06c1af407bdcdaa81e91ac73bc243ffae4d9fcf7eb39d01fa48b10"></h2>
+<ol start="2">
+<li data-line="23" class="code-line">小程序主页是校内新闻页，通过从后端数据库中获取已经过爬虫处理的新闻并以列表的形式显示在主页上。当用户点击某个具体的新闻时，进入具体的新闻页。<a href="http://xuri.hhit.edu.cn/xxyw.htm" target="_blank">新闻内容来源</a>    </li>
+</ol>
+<h2 id="9" data-line="25" class="code-line"><img src="image/index.gif" alt="" class="loading" id="image-hash-5f0d37584666d9635c36e393b59c83a03763a741cb26779c23af6fc873c58238"></h2>
+<ol start="3">
+<li data-line="27" class="code-line">校园卡招领页面显示数据库中已经登记的校园卡招领信息。并且提供登记信息的入口。当用户提交拾获的校园卡信息后，系统后台会通过校园卡上的学号检索该卡主人的联系方式。如果有该人的联系方式，则发送邮件。</li>
+</ol>
+<p data-line="29" class="code-line"><img src="image/loseCard.gif" alt="" class="loading" id="image-hash-24abcca1e2889641277dc052b0e3ca1dfca9b30e5cbd3b1e4d3d68996eb6fb3a"><br>
+校园卡信息登记后失主会收到邮件</p>
+<h2 id="10" data-line="32" class="code-line"><img src="image/email.png" alt="" class="loading" id="image-hash-700260711a64f74fb1b3a762097404e71a7937d89743accf1620e315f944e1b4"></h2>
+<ol start="4">
+<li data-line="34" class="code-line">查看校历</li>
+</ol>
+<h2 id="11" data-line="36" class="code-line"><img src="image/xiaoli.gif" alt="" class="loading" id="image-hash-c473de9e0eaea51bef22e8a9ebdad09e39b0d8f29266e1fb725cb64edc7a0e87"></h2>
+<ol start="5">
+<li data-line="38" class="code-line">用户进入该页时，系统会通过该用户的openid从数据库中获得用户的学号，并将学号发送给后台。后台使用爬虫技术从学校网站上获取该用户实时的考试信息。<a href="http://exam.hhit.edu.cn/" target="_blank">考试信息内容来源</a> </li>
+</ol>
+<p data-line="40" class="code-line"><img src="image/examInfo.gif" alt="" class="loading" id="image-hash-64d9fd6f08f5091a5df1c980fc757fd98f7c05a220cdd57257ba2e77a45e09cf"></p>
+<h2 id="e69bb4e5a49a-2" data-line="42" class="code-line">更多</h2>
+<h3 id="e9a1b9e79baee5898de7abafe59cb0e59d80-2" data-line="43" class="code-line">项目前端Github地址</h3>
+<ul>
+<li data-line="44" class="code-line"><a href="https://github.com/cooktea/HI_JHD" target="_blank">https://github.com/cooktea/HI_JHD</a></li>
+</ul>
+<h3 id="e9a1b9e79baee5908ee7abafe59cb0e59d80-2" data-line="45" class="code-line">项目后端地址Github</h3>
+<ul>
+<li data-line="46" class="code-line"><a href="https://github.com/cooktea/HI_JHD_SERVER" target="_blank">https://github.com/cooktea/HI_JHD_SERVER</a></li>
+</ul
+</body></html>

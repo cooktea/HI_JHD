@@ -88,3 +88,9 @@
     align-content: center;
     justify-items: center
 }
+
+.bottom{
+    text-align: center;
+    height: 100rpx;
+    background-color: gray;
+}

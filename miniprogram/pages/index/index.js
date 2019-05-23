@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
     data: {
-      news:[]
+      news:[],
+      bottomInfo:""
     },
 
     // chooseTab:function(e){
@@ -18,10 +19,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getNewslist()
-    this.setData({
-      news:this.data.news
+    wx.showLoading({
+      title: '加载中',
     })
+    this.getNewslist()
   },
 
   /**
@@ -39,8 +40,7 @@ Page({
     db.collection("stu_info").where({
       _openid:app.globalData.openid
     }).get().then(res=>{
-      console.log(res.data[0])
-      if(!res.data[0].stu_number){
+      if(res.data.length == 0 || (!res.data[0].stu_number)){
         wx.showModal({
           title:"完善信息",
           content:"请点击确定完善信息",
@@ -91,6 +91,9 @@ Page({
   },
 
   onReachBottom: function (){
+    wx.showLoading({
+      title: '加载中',
+    })
     this.getNewslist()
   },
 
@@ -149,10 +152,22 @@ Page({
         var getnews = res.data
         for(var i=0;i<getnews.length;i++){
           that.data.news[that.data.news.length] = getnews[i]
-          that.setData({
-            news:that.data.news
+          setTimeout(function(){
+            that.setData({
+              news:that.data.news
+            })
+            wx.hideLoading({})
+          },2000)
+        }
+        if(res.data.length == 0){
+          wx.hideLoading({})
+          wx.showToast({
+            title:"无更多新闻",
+            icon:"none",
+            duration:2000
           })
         }
+
       }
     })
     setTimeout(function(){

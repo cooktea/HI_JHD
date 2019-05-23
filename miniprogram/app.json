@@ -24,15 +24,21 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "主页"
+        "text": "主页",
+        "iconPath":"images/index.png",
+        "selectedIconPath":"images/s_index.png"
       },
       {
         "pagePath": "pages/service/service",
-        "text": "校内服务"
+        "text": "校内服务",
+        "iconPath":"images/service.png",
+        "selectedIconPath":"images/s_service.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "我的"
+        "text": "我的",
+        "iconPath":"images/user.png",
+        "selectedIconPath":"images/s_user.png"
       }
     ]
   }

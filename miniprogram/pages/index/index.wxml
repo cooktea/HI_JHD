@@ -22,7 +22,11 @@
                     </view>
                 </view>
             </view>
-
         </view>
+        <!-- <view class="bottom">
+            <view >
+                {{bottomInfo}}
+            </view>
+        </view> -->
     </view>
 </view>
