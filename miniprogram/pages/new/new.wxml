@@ -1,0 +1,15 @@
+<view class="container">
+    <view class="title">
+        {{newInfo[0][0]}}
+    </view>
+    <view wx:for="{{newInfo[1]}}" wx:for-index="index">
+        <view wx:if="{{item[4] == 'text'}}">
+            <view class="paragraph">
+                {{item[3]}}
+            </view>
+        </view>
+        <view wx:if="{{item[4] == 'img'}}">
+            <image src="{{imgs[index]}}" />
+        </view>
+    </view>
+</view>

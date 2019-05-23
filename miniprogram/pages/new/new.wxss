@@ -1,0 +1,21 @@
+/* miniprogram/pages/new/new.wxss */
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
+
+.title{
+    font-size: 120%;
+    text-align: center;
+    margin-top: 20rpx;
+    margin-bottom: 30rpx;
+    border-bottom-style: solid;
+}
+
+.paragraph{
+    margin-bottom: 15rpx;
+    font-size: 80%;
+}
+
