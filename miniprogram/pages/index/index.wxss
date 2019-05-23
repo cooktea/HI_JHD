@@ -16,8 +16,8 @@
   }
 
 .tab{
-    width: 50%;
-    color: black;
+    width: 100%;
+    color:white;
 }
 
 .body{
@@ -25,7 +25,7 @@
     flex-direction: column;
     height: 2000rpx;
     width: 100%;
-    background-color: aliceblue;
+    /* background-color: gray; */
 }
 
 .Item{
@@ -34,13 +34,13 @@
     align-content: center;
     justify-items: center;
     margin: 25rpx;
+    /* background: white; */
 }
 
 .newInfo{
     width: 700rpx;
     height: 300rpx;
-    margin-top: 25rpx;
-    margin-bottom: 25rpx;
+    margin-bottom:10rpx;
     display: flex;
     border-bottom-style: solid;
     /* border-bottom-color: gray; */
@@ -62,16 +62,18 @@
 
 .img{
     width: 700rpx;
-    height: 500rpx;
-    margin-top: 25rpx;
-    margin-bottom: 25rpx;
+    margin-top: 10rpx;
+    margin-bottom: 15rpx;
     display: flex;
-    border-bottom-style: solid;
-    border-bottom-color: gray;
-    border-bottom-width: 1rpx;
+    /* border-style: solid;
+    border-color: gray;
+    border-width: 1rpx;
+    border-style: solid;
+    border-radius: 15rpx; */
     display: flex;
     align-content: center;
     justify-items: center;
+    /* background-color: gray; */
 }
 
 .time{

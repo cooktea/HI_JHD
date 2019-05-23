@@ -5,16 +5,14 @@ Page({
    * 页面的初始数据
    */
     data: {
-      Toptab: ["校内新闻","竞赛信息"],
-      chooseTab:"0",
       news:[]
     },
 
-    chooseTab:function(e){
-      this.setData({
-        chooseTab:e.currentTarget.dataset.idx,
-      })
-    },
+    // chooseTab:function(e){
+    //   this.setData({
+    //     chooseTab:e.currentTarget.dataset.idx,
+    //   })
+    // },
 
   /**
    * 生命周期函数--监听页面加载
@@ -98,6 +96,17 @@ Page({
 
   test:function(){
     this.getNewslist()
+  },
+
+  goNewPage:function(e){
+    var number = e.currentTarget.dataset.index
+    console.log(number)
+    this.setData({
+      newNumber:number
+    })
+    wx.navigateTo({
+      url:'../new/new'
+    })
   },
 
   updateImagePath:function(){

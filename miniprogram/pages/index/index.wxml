@@ -1,14 +1,14 @@
 <view class="container">
     <view class="toptab">
-        <view class="{{Tabindex==chooseTab ? 'active':'tab'}}" wx:for="{{Toptab}}" wx:for-item="Tabname" wx:for-index="Tabindex" data-idx="{{Tabindex}}" bindtap="chooseTab">
-            {{Tabname}}
+        <view class="tab">
+            校内新闻
         </view>
     </view>
-    <view class="body" wx:if="{{chooseTab == '0'}}">
+    <view class="body">
         <view wx:for="{{news}}">
-            <view class="Item">
+            <view class="Item" bindtap="goNewPage" data-index="{{item.number}}">
                 <view class="img">
-                    <image wx:if="{{item.imgpath}}" style="width:600px" mode="widthFix" src="{{item.imgpath}}" ></image>
+                    <image wx:if="{{item.imgpath}}" style="width:600px;border-radius:20rpx" mode="widthFix" src="{{item.imgpath}}" ></image>
                     <view wx:else>
                         未找到缩略图
                     </view>
@@ -25,5 +25,4 @@
 
         </view>
     </view>
-    <view class="body" wx:if="{{chooseTab == '1'}}">2</view>
 </view>
