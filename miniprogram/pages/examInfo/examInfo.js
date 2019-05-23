@@ -2,11 +2,15 @@ const app = getApp()
 
 Page({
     data:{
-        examInfo:[]
+        examInfo:[],
+        info:''
     },
 
     onLoad:function(){
         var that = this;
+        this.setData({
+            info:"正在查询，请稍候"
+        })
         const db = wx.cloud.database()
         db.collection("stu_info").where({
             _openid:app.globalData.openid
@@ -20,6 +24,11 @@ Page({
                     that.setData({
                         examInfo:res.data
                     })
+                    if(res.data.length == 0){
+                        that.setData({
+                            info:"最近可能没有考试哦"
+                        })
+                    }
                 }
             })
         })

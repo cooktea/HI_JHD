@@ -3,7 +3,7 @@
         挂科比不挂柯南
     </view>
     <view wx:if="{{examInfo.length == 0}}">
-        最近可能没有考试哦
+        {{info}}
     </view>
     <view wx:for="{{examInfo}}">
         <view class="examInfomationItem">
